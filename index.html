@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial — Dra. Neiara Santos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0E0B09;
+    --bg-soft: #16110D;
+    --brown: #3D2817;
+    --brown-soft: #2A1B10;
+    --gold: #C9A45C;
+    --gold-light: #E8D5A8;
+    --cream: #FAF6EE;
+    --cream-dim: rgba(250,246,238,0.62);
+    --line: rgba(201,164,92,0.25);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Outfit',sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  .serif{font-family:'Cormorant Garamond',serif;}
+
+  /* ---------- Textura de fundo ---------- */
+  body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(201,164,92,0.08), transparent 55%),
+      radial-gradient(circle at 100% 100%, rgba(61,40,23,0.4), transparent 60%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .wrap{
+    max-width:480px;
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+    padding:0 24px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:64px 24px 48px;
+    text-align:center;
+    position:relative;
+  }
+
+  .monograma{
+    width:120px;
+    height:120px;
+    margin:0 auto 28px;
+    border-radius:50%;
+    background: radial-gradient(circle at 35% 30%, #4a3019, var(--brown) 60%, #1c120a 100%);
+    border:1px solid var(--gold);
+    box-shadow:
+      0 0 0 1px rgba(201,164,92,0.15),
+      0 0 40px rgba(201,164,92,0.18),
+      inset 0 0 24px rgba(0,0,0,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    animation: fadeUp 1s ease-out 0.1s forwards;
+  }
+
+  .monograma span{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:38px;
+    color:var(--gold-light);
+    letter-spacing:1px;
+  }
+
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold);
+    opacity:0;
+    animation: fadeUp 1s ease-out 0.3s forwards;
+  }
+
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:34px;
+    line-height:1.25;
+    margin-top:14px;
+    color:var(--cream);
+    opacity:0;
+    animation: fadeUp 1s ease-out 0.45s forwards;
+  }
+
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-light);
+  }
+
+  .hero p.lead{
+    margin-top:16px;
+    font-size:15px;
+    color:var(--cream-dim);
+    font-weight:300;
+    opacity:0;
+    animation: fadeUp 1s ease-out 0.6s forwards;
+  }
+
+  .hero .assinatura{
+    margin-top:28px;
+    font-size:13px;
+    color:var(--gold);
+    letter-spacing:0.5px;
+    opacity:0;
+    animation: fadeUp 1s ease-out 0.75s forwards;
+  }
+
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(14px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  /* ---------- Divisor ---------- */
+  .divisor{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:8px 0 40px;
+  }
+  .divisor .linha{width:36px; height:1px; background:var(--line);}
+  .divisor .ponto{width:5px; height:5px; border-radius:50%; background:var(--gold); opacity:0.7;}
+
+  /* ---------- Seção de contexto ---------- */
+  .contexto{
+    padding:0 0 48px;
+    text-align:center;
+  }
+
+  .contexto h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:24px;
+    font-weight:500;
+    color:var(--gold-light);
+    margin-bottom:16px;
+  }
+
+  .contexto p{
+    font-size:14.5px;
+    color:var(--cream-dim);
+    font-weight:300;
+  }
+
+  .contexto p + p{margin-top:14px;}
+
+  /* ---------- Pacotes ---------- */
+  .secao-pacotes{padding-bottom:56px;}
+
+  .secao-titulo{
+    text-align:center;
+    margin-bottom:36px;
+  }
+
+  .secao-titulo .eyebrow{display:block; animation:none; opacity:1;}
+
+  .secao-titulo h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    font-weight:500;
+    margin-top:10px;
+    color:var(--cream);
+  }
+
+  .card{
+    position:relative;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:linear-gradient(165deg, var(--bg-soft) 0%, #100D0A 100%);
+    padding:32px 26px 36px;
+    margin-bottom:28px;
+    overflow:hidden;
+  }
+
+  .card.diamante{
+    border-color:rgba(201,164,92,0.55);
+    background:linear-gradient(165deg, #1A140D 0%, #100D0A 100%);
+    box-shadow:0 0 50px rgba(201,164,92,0.08);
+  }
+
+  .card.diamante::before{
+    content:'Mais procurado';
+    position:absolute;
+    top:18px;
+    right:-34px;
+    transform:rotate(40deg);
+    background:var(--gold);
+    color:#1A1208;
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    padding:4px 38px;
+  }
+
+  .card-selo{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #4a3019, var(--brown) 60%, #1c120a 100%);
+    border:1px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+  }
+
+  .card-selo span{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:16px;
+    color:var(--gold-light);
+  }
+
+  .card h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:23px;
+    font-weight:600;
+    color:var(--gold-light);
+  }
+
+  .card .subtitulo{
+    font-size:12.5px;
+    color:var(--cream-dim);
+    margin-top:4px;
+    letter-spacing:0.3px;
+  }
+
+  .card .preco{
+    margin:22px 0 6px;
+    display:flex;
+    align-items:baseline;
+    gap:6px;
+  }
+
+  .card .preco .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:38px;
+    font-weight:600;
+    color:var(--cream);
+  }
+
+  .card .preco .periodo{
+    font-size:12.5px;
+    color:var(--cream-dim);
+  }
+
+  .card .preco-nota{
+    font-size:11.5px;
+    color:var(--gold);
+    margin-bottom:22px;
+  }
+
+  .lista{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:13px;
+  }
+
+  .lista li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:13.5px;
+    color:var(--cream-dim);
+  }
+
+  .lista li svg{
+    flex-shrink:0;
+    margin-top:2px;
+  }
+
+  .lista li strong{
+    color:var(--cream);
+    font-weight:500;
+  }
+
+  .extra-box{
+    margin-top:22px;
+    margin-bottom:4px;
+    padding:14px 16px;
+    border:1px dashed var(--line);
+    border-radius:12px;
+    font-size:12.5px;
+    color:var(--cream-dim);
+  }
+
+  .extra-box strong{color:var(--gold-light); font-weight:500;}
+
+  /* ---------- Diferença rápida ---------- */
+  .comparativo{
+    text-align:center;
+    font-size:12px;
+    color:var(--cream-dim);
+    margin:-8px 0 40px;
+    padding:0 8px;
+  }
+
+  /* ---------- Sobre a parceria ---------- */
+  .sobre{
+    padding-bottom:52px;
+    text-align:center;
+  }
+
+  .sobre h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:24px;
+    color:var(--gold-light);
+    margin-bottom:18px;
+  }
+
+  .sobre-grid{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  .sobre-item{
+    border-top:1px solid var(--line);
+    padding-top:16px;
+    text-align:left;
+  }
+
+  .sobre-item h4{
+    font-family:'Cormorant Garamond',serif;
+    font-size:16.5px;
+    font-weight:600;
+    color:var(--cream);
+    margin-bottom:6px;
+  }
+
+  .sobre-item p{
+    font-size:13px;
+    color:var(--cream-dim);
+  }
+
+  /* ---------- CTA final ---------- */
+  .cta-final{
+    text-align:center;
+    padding:8px 24px 64px;
+  }
+
+  .cta-final .monograma{
+    width:70px;
+    height:70px;
+    margin-bottom:22px;
+    animation:none;
+    opacity:1;
+  }
+
+  .cta-final .monograma span{font-size:22px;}
+
+  .cta-final h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    font-weight:500;
+    color:var(--cream);
+    margin-bottom:12px;
+  }
+
+  .cta-final p{
+    font-size:13.5px;
+    color:var(--cream-dim);
+    margin-bottom:26px;
+  }
+
+  .footer-nota{
+    text-align:center;
+    font-size:11px;
+    color:rgba(250,246,238,0.35);
+    padding-bottom:36px;
+    letter-spacing:0.3px;
+  }
+
+  /* ---------- Responsivo: tablet/desktop ---------- */
+  @media(min-width:760px){
+    .wrap{max-width:880px;}
+    .pacotes-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:start;
+    }
+    .card{margin-bottom:0;}
+    .sobre-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px 32px;
+    }
+    .hero h1{font-size:42px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="monograma"><span>N·S</span></div>
+    <div class="eyebrow">Proposta de Gestão de Tráfego &amp; Conteúdo</div>
+    <h1>Mais autoridade.<br><em>Mais consultas.</em><br>Mais Dra. Neiara.</h1>
+    
+    <p class="assinatura">Preparada para Dra. Neiara Santos · Manaus, AM</p>
+  </section>
+
+  <div class="divisor"><div class="linha"></div><div class="ponto"></div><div class="linha"></div></div>
+
+  <!-- CONTEXTO -->
+  <section class="contexto">
+    <h2 class="serif">Seu sorriso já eleva autoestima.<br>Sua marca precisa fazer o mesmo.</h2>
+    <p>Hoje sua presença no Instagram já comunica cuidado, sofisticação e resultado. O que falta é transformar esse reconhecimento em um fluxo constante de pacientes qualificados chegando até você.</p>
+  </section>
+
+  <!-- PACOTES -->
+  <section class="secao-pacotes">
+    <div class="secao-titulo">
+      <span class="eyebrow">Pacotes Trimestrais</span>
+      <h2 class="serif">Escolha o ritmo da sua presença</h2>
+    </div>
+
+    <div class="pacotes-grid">
+
+      <!-- PLANO ESSENCIAL -->
+      <div class="card">
+        <div class="card-selo"><span>N·S</span></div>
+        <h3 class="serif">Plano Essencial</h3>
+        <div class="subtitulo">Tráfego pago + produção de vídeo</div>
+
+        <div class="preco">
+          <span class="num">R$ 1.200</span>
+          <span class="periodo">/ mês · contrato trimestral</span>
+        </div>
+        <div class="preco-nota">Investimento em mídia paga não incluso</div>
+
+        <ul class="lista">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#C9A45C"/><path d="M5 8.2L7 10.2L11 6.2" stroke="#C9A45C" stroke-width="1.2"/></svg>
+            <span>Gestão completa de <strong>tráfego pago</strong> (Meta Ads)</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#C9A45C"/><path d="M5 8.2L7 10.2L11 6.2" stroke="#C9A45C" stroke-width="1.2"/></svg>
+            <span><strong>4 vídeos</strong> por mês para alimentar as campanhas</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#C9A45C"/><path d="M5 8.2L7 10.2L11 6.2" stroke="#C9A45C" stroke-width="1.2"/></svg>
+            <span>Otimização contínua de campanhas e segmentação</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#C9A45C"/><path d="M5 8.2L7 10.2L11 6.2" stroke="#C9A45C" stroke-width="1.2"/></svg>
+            <span>Relatório de performance e resultados</span>
+          </li>
+        </ul>
+
+        <div class="extra-box">
+          <strong>Precisou de mais vídeos no meio da operação?</strong><br>
+          Vídeo extra avulso: R$ 150 · A partir do 2º vídeo extra no mesmo mês: R$ 100 cada
+        </div>
+
+      </div>
+
+      <!-- PLANO DIAMANTE -->
+      <div class="card diamante">
+        <div class="card-selo"><span>N·S</span></div>
+        <h3 class="serif">Plano Diamante</h3>
+        <div class="subtitulo">Tráfego pago + conteúdo sob demanda</div>
+
+        <div class="preco">
+          <span class="num">R$ 1.300</span>
+          <span class="periodo">/ mês · contrato trimestral</span>
+        </div>
+        <div class="preco-nota">Investimento em mídia paga não incluso</div>
+
+        <ul class="lista">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#E8D5A8"/><path d="M5 8.2L7 10.2L11 6.2" stroke="#E8D5A8" stroke-width="1.2"/></svg>
+            <span>Gestão completa de <strong>tráfego pago</strong> (Meta Ads)</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#E8D5A8"/><path d="M5 8.2L7 10.2L11 6.2" stroke="#E8D5A8" stroke-width="1.2"/></svg>
+            <span><strong>6 vídeos</strong> por mês já inclusos</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#E8D5A8"/><path d="M5 8.2L7 10.2L11 6.2" stroke="#E8D5A8" stroke-width="1.2"/></svg>
+            <span><strong>Criativos sob demanda</strong>, conforme a necessidade de cada campanha</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#E8D5A8"/><path d="M5 8.2L7 10.2L11 6.2" stroke="#E8D5A8" stroke-width="1.2"/></svg>
+            <span>Otimização contínua de campanhas e segmentação</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#E8D5A8"/><path d="M5 8.2L7 10.2L11 6.2" stroke="#E8D5A8" stroke-width="1.2"/></svg>
+            <span>Relatório de performance e resultados</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#E8D5A8"/><path d="M5 8.2L7 10.2L11 6.2" stroke="#E8D5A8" stroke-width="1.2"/></svg>
+            <span>Prioridade na produção de novos criativos</span>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <p class="comparativo">Ambos os planos têm contrato mínimo de 3 meses, prazo necessário para que o tráfego pago atinja maturidade e performance consistente.</p>
+  </section>
+
+  <div class="divisor"><div class="linha"></div><div class="ponto"></div><div class="linha"></div></div>
+
+  <!-- SOBRE A PARCERIA -->
+  <section class="sobre">
+    <h2 class="serif">Por que essa parceria funciona</h2>
+    <div class="sobre-grid">
+      <div class="sobre-item">
+        <h4>Sua imagem em primeiro plano</h4>
+        <p>Toda a comunicação é construída em torno da sua autoridade como profissional, não apenas da clínica como marca genérica.</p>
+      </div>
+      <div class="sobre-item">
+        <h4>Flexibilidade sem burocracia</h4>
+        <p>Precisou de um vídeo extra no meio do mês? Resolvemos rápido, com valores claros e definidos desde o início.</p>
+      </div>
+      <div class="sobre-item">
+        <h4>Gestão ativa, não automática</h4>
+        <p>Campanhas são acompanhadas e ajustadas continuamente, o orçamento de mídia trabalha a seu favor, não no piloto automático.</p>
+      </div>
+      <div class="sobre-item">
+        <h4>Compromisso de resultado</h4>
+        <p>Relatórios periódicos para que você acompanhe, com clareza, o caminho entre o investimento e a cadeira do consultório.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENCERRAMENTO -->
+  <section class="cta-final" id="contato">
+    <div class="monograma"><span>N·S</span></div>
+    <h2 class="serif">Vamos elevar sua presença<br>do mesmo jeito que você eleva sorrisos?</h2>
+    <p>Esta proposta foi preparada com cuidado para o seu próximo passo digital.</p>
+  </section>
+
+  <p class="footer-nota">HighMedia · Gestão de Tráfego &amp; Conteúdo Digital</p>
+
+</div>
+
+</body>
+</html>
